@@ -1,0 +1,19 @@
+.nav{
+    display: flex;
+    flex-direction: column;
+    padding: 2%;
+    width: 10%;
+    border-right: solid 3px #3F93DD;
+}
+    
+.lien{
+    text-decoration: none;
+    color: #3F93DD;
+    font-size: 20px;
+    display: flex;
+    flex-direction: row;
+    padding: 10Px;
+}
+.item{
+    padding-left: 5%;
+}
