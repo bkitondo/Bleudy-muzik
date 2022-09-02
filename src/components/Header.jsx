@@ -7,13 +7,13 @@ import "../styles/Header.css";
 import logo from "../medias/logo.png";
 
 const Header = ({ me, setMe }) => {
-  const { spotify, token, setToken } = useContext(UseToken);
+  const { spotify,setToken } = useContext(UseToken);
   useEffect(() => {
     spotify.getMe().then((id) => {
       setMe(id);
       console.log("id c'est ", id);
     });
-  }, [token]);
+  }, [spotify]);
 
   function Logout() {
     setToken("");
