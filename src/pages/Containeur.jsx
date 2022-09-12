@@ -4,6 +4,8 @@ import PageConnexion from "./PageConnexion";
 import Recherche from "./Recherche"
 import Bibliotheque from "./Bibliotheque"
 import AjouterPlaylist from "./AjouterPlaylist"
+import Header from "../components/Header";
+// import Footer from "../components/Footer";
 
 import {UseToken} from "../components/UseContextFonction";
 import {useState, useEffect} from "react"
@@ -15,6 +17,7 @@ const spotify = new SpotifyWebApi();
 const Containeur = ()=> {
     
     const [token, setToken] = useState("");
+    // const [uri, setUri] = useState("")
 
     useEffect(() => {
       const hash = window.location.hash;
@@ -38,7 +41,9 @@ const Containeur = ()=> {
 
     <main>
       <UseToken.Provider value={{ token,setToken,spotify }}>
+        {/* <Header/> */}
         <BrowserRouter>
+        {/* <div>{(token)? <Header/> : null}</div> */}
         <Routes>
             <Route path="/" element={ (!token)? <PageConnexion />: <PageAccueil/>} />
             <Route path="/accueil" element={ (token)? <PageAccueil />:<PageConnexion/>} />
@@ -51,6 +56,5 @@ const Containeur = ()=> {
     </main>
   );
 }
-
 
 export default Containeur

@@ -1,0 +1,19 @@
+.main{
+    display: flex;
+    flex-direction: row;
+}
+.input{
+    border: solid 1px #3992DD;
+    outline: none;
+    padding: 9px;
+    border-radius: 10px 0 0 10px;
+    color: #3992DD;
+}
+    
+.btnInput{
+    color: #fff;
+    border-style: none;
+    background: #3992DD;
+    padding: 10px;
+    border-radius: 0 10px 10px 0;
+}
