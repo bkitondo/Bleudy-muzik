@@ -1,16 +1,15 @@
-
-import PageAccueil from "./PageAccueil";
-import PageConnexion from "./PageConnexion";
+import PageAccueil from "./PageAccueil"
+import PageConnexion from "./PageConnexion"
 import Recherche from "./Recherche"
 import Bibliotheque from "./Bibliotheque"
 import AjouterPlaylist from "./AjouterPlaylist"
-import Header from "../components/Header";
-import Footer from "../components/Footer";
+import Header from "../components/Header"
+import Footer from "../components/Footer"
 
-import {UseToken} from "../components/UseContextFonction";
+import {UseToken} from "../components/UseContextFonction"
 import {useState, useEffect} from "react"
-import SpotifyWebApi from "spotify-web-api-js";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import SpotifyWebApi from "spotify-web-api-js"
+import { BrowserRouter, Route, Routes } from "react-router-dom"
 
 const spotify = new SpotifyWebApi();
 
@@ -19,7 +18,6 @@ const Containeur = ()=> {
   const [token, setToken] = useState(""),
         [me , setMe] = useState([]),
         [uri, setUri] = useState("")
-        console.log("voici le uri selectionné", uri);
 
     useEffect(() => {
       const hash = window.location.hash;
@@ -31,7 +29,7 @@ const Containeur = ()=> {
           .split("&")
           .find((element) => element.startsWith("access_token"))
           .split("=")[1];
-  
+
         window.location.hash = "";
         window.localStorage.setItem("token", token);
       }
@@ -39,9 +37,7 @@ const Containeur = ()=> {
       spotify.setAccessToken(token);
     }, [token]);
 
-  
   return (
-
     <main>
       <UseToken.Provider value={{ token,setToken,spotify }}>
         {(token)? <Header me ={me} setMe = {setMe} />: null}  
@@ -59,5 +55,4 @@ const Containeur = ()=> {
     </main>
   );
 }
-
 export default Containeur

@@ -19,14 +19,17 @@ const Recherche = ({setUri})=>{
 const dataApi = datas;
     console.log("j'ai prix les chansons", datas);
     return(
-        <main className="main">
+        <main className="principal">
             <Menu/>
-            <div>
-                <form className="form" onSubmit={GetTrack}>
+            <div className="secondaire">
+                <div className="form" >
+
+                <form  onSubmit={GetTrack}>
                     <input className="input" type="text"  onChange={(e)=> setValue(e.target.value)} />
                     <button className="btnInput" type="submit">recherche</button>
                 </form>
-                <article className='conatiner'>
+                </div>
+                <article className='conatinerRecherche'>
                     <ul className="ul">
                         {dataApi.map((item, index)=>{
                          return( 
@@ -36,7 +39,7 @@ const dataApi = datas;
                                     src={item.album.images[0].url}
                                     alt="l'image de l'artiste"
                                 /> 
-                                <p>{item.album.artists[0].name} </p>
+                                <p className="nom" >{item.album.artists[0].name} </p>
                                 <p>{item.name} </p>
                             </li>
                             )}

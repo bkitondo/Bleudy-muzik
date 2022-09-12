@@ -3,10 +3,8 @@ import { UseToken } from './UseContextFonction';
 import { useContext, useEffect, useState } from 'react';
 
 const Footer = ({uri})=>{
-    const {token} = useContext(UseToken)
-    const [play, setPlayer] = useState(false)
-    console.log("token en lecture", token);
-    console.log("uri en lecture", uri);
+    const {token} = useContext(UseToken),
+          [play, setPlayer] = useState(false)
 
     useEffect(()=>{
         setPlayer(true)
@@ -15,28 +13,25 @@ const Footer = ({uri})=>{
     return(
         <main>
             <div className="player" >
-
-<SpotifyPlayer
-// styles={{
-// activeColor: '#fff',
-// bgColor: '#333',
-// color: '#fff',
-// loaderColor: '#fff',
-// sliderColor: '#1cb954',
-// trackArtistColor: '#ccc',
-// trackNameColor: '#fff',
-// }}
-
-token={token}
-uris={uri}
-play={play}
-autoPlay={true}
-callback={(value)=>{
-    !value.isPlaying ? setPlayer(false) : setPlayer(true)
-}}
-
-/>
-</div>
+                <SpotifyPlayer
+                // styles={{
+                // activeColor: '#fff',
+                // bgColor: '#333',
+                // color: '#fff',
+                // loaderColor: '#fff',
+                // sliderColor: '#1cb954',
+                // trackArtistColor: '#ccc',
+                // trackNameColor: '#fff',
+                // }}
+                token={token}
+                uris={uri}
+                play={play}
+                autoPlay={true}
+                callback={(value)=>{
+                    !value.isPlaying ? setPlayer(false) : setPlayer(true)
+                }}
+                />
+            </div>
         </main>
     )
 }

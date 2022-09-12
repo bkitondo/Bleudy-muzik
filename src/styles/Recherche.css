@@ -1,7 +1,9 @@
-.main{
+.principal{
     display: flex;
     flex-direction: row;
+    width: 100%;
 }
+
 .input{
     border: solid 1px #3992DD;
     outline: none;
@@ -16,4 +18,22 @@
     background: #3992DD;
     padding: 10px;
     border-radius: 0 10px 10px 0;
+}
+.conatinerRecherche{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap; 
+    width: 100%;
+    height: 450px;
+    overflow-y: scroll;
+}
+.form{
+    display: flex;
+    justify-content: center;
+    padding-top: 10px;
+    width: 100%;
+}
+.secondaire{
+    width: 100%;
+    margin: 0px;
 }

@@ -7,27 +7,26 @@ import "../styles/items.css"
 
 const PageAccueil =({setUri})=>{
     const [data, setData]=useState([]),
-          {spotify}= useContext(UseToken)
+          {spotify, token}= useContext(UseToken)
     
-
 useEffect(()=>{
     spotify.getNewReleases().then((datas)=>{
         setData(datas.albums.items)
-        
-        // spotify.getMyRecentlyPlayedTracks().then(res=>{
-        //     console.log("trigo",res);
     })
-
-}, [spotify])
+        
+    //     spotify.getMyRecentlyPlayedTracks().then(res=>{
+    //     console.log("trigo",res);
+    // })
+}, [token])
 
  const dataApi = data
- console.log("news ", dataApi);
+ 
     return(
          <main>
             <div className="body">
                 <Menu/>
                 <article className='conatiner'>
-                    <h2>Nouveautés tendance</h2>
+                    <h2 className="h2accueil" >Nouveautés tendance</h2>
                     <ul className="ul">
                         {dataApi.map((item, index)=>{
                          return( 
@@ -37,16 +36,14 @@ useEffect(()=>{
                                     src={item.images[0].url}
                                     alt="l'image de l'artiste"
                                 />
-                                <p>{item.artists[0].name} </p>
+                                <p className="nom">{item.artists[0].name} </p>
                                 <p>{item.name} </p>
                             </li>
                             )}
                             )}
-                        
                     </ul>
                 </article>
             </div>
-           
          </main>   
     )
 }

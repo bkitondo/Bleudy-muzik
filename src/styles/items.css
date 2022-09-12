@@ -1,5 +1,5 @@
 .Cart{
-    width: 10%;
+    width: 140px;
     height: auto;
     background-color: #3992DD;
     /* box-shadow: #3992DD; */
@@ -41,8 +41,9 @@
 p{
     font-size:16px;
 }
-h3{
-    font-size: 18px;
+.nom{
+    font-size: 16px;
+    font-weight: bold;
 }
 
 @media screen {
