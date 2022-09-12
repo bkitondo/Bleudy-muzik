@@ -5,7 +5,7 @@ import Recherche from "./Recherche"
 import Bibliotheque from "./Bibliotheque"
 import AjouterPlaylist from "./AjouterPlaylist"
 import Header from "../components/Header";
-// import Footer from "../components/Footer";
+import Footer from "../components/Footer";
 
 import {UseToken} from "../components/UseContextFonction";
 import {useState, useEffect} from "react"
@@ -15,9 +15,11 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 const spotify = new SpotifyWebApi();
 
 const Containeur = ()=> {
-    
-    const [token, setToken] = useState("");
-    // const [uri, setUri] = useState("")
+  
+  const [token, setToken] = useState(""),
+        [me , setMe] = useState([]),
+        [uri, setUri] = useState("")
+        console.log("voici le uri selectionné", uri);
 
     useEffect(() => {
       const hash = window.location.hash;
@@ -37,7 +39,6 @@ const Containeur = ()=> {
       spotify.setAccessToken(token);
     }, [token]);
 
-    const [me , setMe] = useState([])
   
   return (
 
@@ -53,6 +54,7 @@ const Containeur = ()=> {
             <Route path="/ajouterPlaylist"  element={ (token)? <AjouterPlaylist />:<PageConnexion/>} />
         </Routes>
         </BrowserRouter>
+        {(token)? <Footer uri={uri} setUri={setUri} />: null}
       </UseToken.Provider>
     </main>
   );

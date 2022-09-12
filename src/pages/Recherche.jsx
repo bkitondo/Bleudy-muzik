@@ -5,7 +5,7 @@ import { useState } from "react"
 import "../styles/Recherche.css"
 import "../styles/items.css"
 
-const Recherche = ()=>{
+const Recherche = ({setUri})=>{
     const[datas, setDaats] = useState([])
     const {spotify} = useContext(UseToken)
     const [value, setValue] = useState("")
@@ -30,7 +30,7 @@ const dataApi = datas;
                     <ul className="ul">
                         {dataApi.map((item, index)=>{
                          return( 
-                            <li key={index}  className="Cart">
+                            <li key={index}  className="Cart" onClick={()=>setUri(item.uri)}>
                                 <img
                                     className="image1"
                                     src={item.album.images[0].url}

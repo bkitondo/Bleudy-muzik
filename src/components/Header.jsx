@@ -11,7 +11,6 @@ const Header = ({ me, setMe }) => {
   useEffect(() => {
     spotify.getMe().then((id) => {
       setMe(id);
-      console.log("id c'est ", id);
     });
   }, [spotify]);
 
@@ -27,7 +26,6 @@ const Header = ({ me, setMe }) => {
         <span className="title">B-Muzik</span>
       </div>
       <div className="children">
-        {/* <img src={me.images} alt="" /> */}
         <span className="name">{me.display_name} </span>
         <button className="btn" onClick={Logout}>
           <AiOutlineLogout />

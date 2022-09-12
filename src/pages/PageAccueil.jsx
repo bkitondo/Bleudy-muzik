@@ -7,15 +7,15 @@ import { useEffect,  useState } from "react"
 import "../styles/PageAccueil.css"
 import "../styles/items.css"
 
-const PageAccueil =()=>{
+const PageAccueil =({setUri})=>{
     const [data, setData]=useState([])
     const {spotify}= useContext(UseToken)
-    // const [me , setMe] = useState([])
-    const [uri, setUri]= useState("")
+    
 
 useEffect(()=>{
     spotify.getNewReleases().then((datas)=>{
         setData(datas.albums.items)
+        
         // spotify.getMyRecentlyPlayedTracks().then(res=>{
         //     console.log("trigo",res);
     })
@@ -49,7 +49,7 @@ useEffect(()=>{
                     </ul>
                 </article>
             </div>
-          <Footer uri={uri} setUri={setUri} />  
+           
          </main>   
     )
 }

@@ -6,6 +6,7 @@ const Footer = ({uri})=>{
     const {token} = useContext(UseToken)
     const [play, setPlayer] = useState(false)
     console.log("token en lecture", token);
+    console.log("uri en lecture", uri);
 
     useEffect(()=>{
         setPlayer(true)
