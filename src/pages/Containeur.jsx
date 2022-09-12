@@ -48,8 +48,8 @@ const Containeur = ()=> {
         <BrowserRouter>
         <Routes>
             <Route path="/" element={ (!token)? <PageConnexion />: <PageAccueil/>} />
-            <Route path="/accueil" element={ (token)? <PageAccueil />:<PageConnexion/>} />
-            <Route path="/recherche"  element={ (token)? <Recherche/>:<PageConnexion/>} />
+            <Route path="/accueil" element={ (token)? <PageAccueil setUri={setUri} />:<PageConnexion/>} />
+            <Route path="/recherche"  element={ (token)? <Recherche setUri={setUri}/>:<PageConnexion/>} />
             <Route path="/bibliotheque"  element={ (token)? <Bibliotheque />:<PageConnexion/>} />
             <Route path="/ajouterPlaylist"  element={ (token)? <AjouterPlaylist />:<PageConnexion/>} />
         </Routes>
