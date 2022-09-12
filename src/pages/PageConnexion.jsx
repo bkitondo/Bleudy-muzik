@@ -1,3 +1,5 @@
+import "../styles/Connexion.css"
+
 const PageConnexion = ()=>{
   
 const CLIENT_ID = "4d1b4fd1a8f041248da6a12d1bc25f9b"  
@@ -27,11 +29,11 @@ const scope = [
   ]
 
 return(
-<main  >
-<h1 > Bienvenue sur Bleudy-Muzik</h1>
+<main className="mainConnexion" >
+<h1 className="h1Connexion"> Bienvenue sur Bleudy-Muzik</h1>
 {/* <p> Une application de lecture des musique en ligne. pas besoin d'une carte de credit</p> */}
-<button  >
-<a  href={`${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&scopes=${scope}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}&show_dialog=true`}>Se connecter via spotify</a>
+<button  className="btnConnexion">
+<a  className="aConnexion" href={`${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&scopes=${scope}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}&show_dialog=true`}>Se connecter via spotify</a>
 </button>  
 </main>
 )

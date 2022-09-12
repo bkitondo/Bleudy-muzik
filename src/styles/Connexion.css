@@ -1,0 +1,29 @@
+.mainConnexion{
+    background-image: url("../medias/musique-et-cerveau.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 620px;
+    margin: 0px;
+    text-align: center;
+}
+.h1Connexion{
+    color:#3992DD;
+    font-size: 48px;
+    padding-top: 200px;
+}
+.btnConnexion{
+    background:#3992DD;
+    border-style: none;
+    border-radius: 20px;
+    padding: 20px 10px;
+    margin-top: 40px;
+}
+.aConnexion{
+    text-decoration: none;
+    color: #fff;
+    font-size: 24px;
+}
+.btnConnexion:hover{
+background: #4f5a64;
+}
+
