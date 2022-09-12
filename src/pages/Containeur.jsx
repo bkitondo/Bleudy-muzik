@@ -36,14 +36,15 @@ const Containeur = ()=> {
       setToken(token);
       spotify.setAccessToken(token);
     }, [token]);
+
+    const [me , setMe] = useState([])
   
   return (
 
     <main>
       <UseToken.Provider value={{ token,setToken,spotify }}>
-        {/* <Header/> */}
+        {(token)? <Header me ={me} setMe = {setMe} />: null}  
         <BrowserRouter>
-        {/* <div>{(token)? <Header/> : null}</div> */}
         <Routes>
             <Route path="/" element={ (!token)? <PageConnexion />: <PageAccueil/>} />
             <Route path="/accueil" element={ (token)? <PageAccueil />:<PageConnexion/>} />

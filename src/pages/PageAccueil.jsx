@@ -1,5 +1,5 @@
 import Menu from "../components/Menu"
-import Header from "../components/Header"
+// import Header from "../components/Header"
 import Footer from "../components/Footer"
 import { UseToken } from "../components/UseContextFonction"
 import { useContext } from "react"
@@ -10,7 +10,7 @@ import "../styles/items.css"
 const PageAccueil =()=>{
     const [data, setData]=useState([])
     const {spotify}= useContext(UseToken)
-    const [me , setMe] = useState([])
+    // const [me , setMe] = useState([])
     const [uri, setUri]= useState("")
 
 useEffect(()=>{
@@ -26,7 +26,7 @@ useEffect(()=>{
  console.log("news ", dataApi);
     return(
          <main>
-            <Header   me={me} setMe={setMe} />
+            {/* <Header   me={me} setMe={setMe} /> */}
             <div className="body">
                 <Menu/>
                 <article className='conatiner'>
