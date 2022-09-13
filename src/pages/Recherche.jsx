@@ -25,7 +25,7 @@ const dataApi = datas;
                 <div className="form" >
 
                 <form  onSubmit={GetTrack}>
-                    <input className="input" type="text"  onChange={(e)=> setValue(e.target.value)} />
+                    <input className="input" type="search" placeholder="tapez votre recherche ici" onChange={(e)=> setValue(e.target.value)} />
                     <button className="btnInput" type="submit">recherche</button>
                 </form>
                 </div>
