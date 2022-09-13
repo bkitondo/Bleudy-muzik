@@ -3,7 +3,8 @@ import "../styles/Connexion.css"
 const PageConnexion = ()=>{
   
 const CLIENT_ID = "4d1b4fd1a8f041248da6a12d1bc25f9b"  
-const REDIRECT_URI = "http://localhost:3000/accueil"
+// const REDIRECT_URI = "http://localhost:3000/accueil"
+const REDIRECT_URI = "https://bleudy-muzik.vercel.app/accueil"
 const AUTH_ENDPOINT = "https://accounts.spotify.com/authorize"
 const RESPONSE_TYPE = "token"
 const scope = [
